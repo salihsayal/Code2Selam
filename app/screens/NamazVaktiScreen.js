@@ -10,9 +10,9 @@ import { useGetVakti } from '../components/NamazVaktiScreenComponents/Hooks/useG
 
 const NamazVaktiScreen = () => {
   const colors = useThemeColors()
-  const [loading, error, address, vakti] = useGetVakti()
-  if (address) {
-    console.log(address, vakti)
+  const [loading, error, vakti] = useGetVakti()
+  if (vakti) {
+    console.log(vakti)
   }
 
   if (loading) {
@@ -35,10 +35,8 @@ const NamazVaktiScreen = () => {
     <SafeAreaView style={SafeAndroid.AndroidSafeArea}>
       <View style={{ height: '25%' }}>
         <Text style={{ color: colors.fontColor, fontSize: 50 }}>
-          {address.address.city}
         </Text>
         <Text style={{ color: colors.fontColor, fontSize: 30 }}>
-          {address.address.road}
         </Text>
       </View>
       <View style={{ height: '25%' }}>
